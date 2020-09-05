@@ -3,6 +3,10 @@ var app = express();
 
 var port = 3500;
 
+var users = [
+    { id: 1, name: "nhat"},
+    { id: 2, name: "minh"}
+];
 app.set('view engine', 'pug');
 app.set('views', './views');
 
@@ -13,12 +17,17 @@ app.get('/', function(req, res){
 
 app.get('/users',function(req, res){
     res.render('users/', {
-        users: [
-            { id: 1, name: "nhat"},
-            { id: 2, name: "minh"}
-        ]
+      users : users
     });
 });
+
+app.get('/users/search', function(req, res){
+    var q = req.query.q;
+    var matchedUsers = users.filter(function(users){
+        return users.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+    });
+    res.render('users/',{ users : matchedUsers});
+})
 
 app.listen(port, function(){
     console.log('server listening on port ' + port);
