@@ -2,18 +2,7 @@
   "users": [
     {
       "name": "nhat",
-      "phone": "122323",
-      "id": "euZWpdcUx"
-    },
-    {
-      "name": "minh",
-      "phone": "12345678",
-      "id": "P4xjkL6NE"
-    },
-    {
-      "name": "kha",
-      "phone": "12345678",
-      "id": "G_t0MdUeW"
+      "phone": "122323"
     }
   ]
 }
