@@ -1,2 +1,19 @@
-h1 hello coder
-a(href="/users") users list
+extends ./layouts/common
+block content
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='#')
+            img(src="/image/logo.png")
+        .collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item.active
+                  a.nav-link(href='/')
+                    | Home 
+                li.nav-item
+                  a.nav-link(href='/users/create') Create
+                li.nav-item
+                  a.nav-link(href='/users') User
+                li.nav-item
+                  a.nav-link(href='#') Game
+    h1 hello coder
+    a(href="/users") users list
+    
