@@ -1,0 +1,13 @@
+extends ../layouts/common
+block content 
+    h1 Login
+
+    if errors
+        each error in errors
+          .arlert.alert-danger= error
+    form(method ="post")
+        label(for="name") Email
+        input(type="text",name="email", value= value ? value.email : '')
+        label Password
+        input(type="password",name="password",value= value ? value.password : '')
+        button Login
