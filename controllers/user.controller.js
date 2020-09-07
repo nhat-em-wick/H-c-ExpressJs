@@ -1,7 +1,6 @@
 var db = require('../db');
 var shortid = require("shortid");
 
-
 module.exports.index = function(req, res){
     res.render('users/', {
       users : db.get('users').value()
@@ -29,17 +28,6 @@ module.exports.get = function(req, res){
 
 module.exports.postCreate = function(req, res){
     req.body.id = shortid.generate();
-    var errors = [];
-    if(!req.body.name){
-        errors.push('name is required.')
-    }
-    if(!req.body.password){
-        errors.push('password is required.')
-    }
-    if(errors.length){
-        res.render('users/create',{errors:errors, value: req.body});
-        return;
-    }
     db.get('users').push(req.body).write();
     res.redirect('/users');
 }
