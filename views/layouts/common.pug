@@ -6,4 +6,21 @@ html(lang="en")
         title Document
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z', crossorigin='anonymous')
     body
-        block content 
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='#')
+                img(src="/image/logo.png")
+            .collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                      a.nav-link(href='/')
+                        | Home 
+                    li.nav-item
+                      a.nav-link(href='/users/create') Create
+                    li.nav-item
+                      a.nav-link(href='/users') User
+                    li.nav-item
+                      a.nav-link(href='#') Game
+            if user
+              p= user.name
+          
+        block content

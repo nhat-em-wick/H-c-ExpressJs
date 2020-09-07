@@ -17,7 +17,7 @@ app.use(express.static('public'));
 
 // parse application/json
 app.use(bodyParser.json());
-app.use(cookieParser());
+app.use(cookieParser('eadrdtyftf23'));
 // thu muc me la views
 app.get('/', function(req, res){
     res.render('index');
