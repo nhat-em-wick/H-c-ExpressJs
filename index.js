@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var userRoute = require('./routes/users.route');
 //
-
+var cookieParser = require('cookie-parser');
 var port = 3500;
 
 var app = express();
@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'));
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(cookieParser());
 // thu muc me la views
 app.get('/', function(req, res){
     res.render('index');
