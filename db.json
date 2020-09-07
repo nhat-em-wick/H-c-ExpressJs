@@ -1,19 +1,14 @@
 {
   "users": [
     {
-      "name": "nhat",
-      "phone": "122323",
-      "id": "gcQh4B2KC"
-    },
-    {
       "name": "duc",
-      "phone": "454646",
-      "id": "ZrJkuzZFc"
+      "password": "123467",
+      "id": "LVmHxvywv"
     },
     {
-      "name": "banh",
-      "phone": "12345678",
-      "id": "HCW0vfwtM"
+      "name": "minh",
+      "password": "123467",
+      "id": "jpzywietE"
     }
   ]
 }

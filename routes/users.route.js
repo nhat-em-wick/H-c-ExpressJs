@@ -8,7 +8,7 @@ router.get('/search', controller.search)
 
 router.get('/create', controller.create);
 
-router.get('/:id', controller.id);
+router.get('/:id', controller.get);
 
 router.post('/create', controller.postCreate);
 

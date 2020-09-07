@@ -1,9 +1,13 @@
 extends ../layouts/common
 block content 
     h1 create user
+
+    if errors
+        each error in errors
+          .arlert.alert-danger= error
     form(action="/users/create", method ="post")
         label(for="name") Name
-        input(type="text",name="name")
-        label Phone
-        input(type="text",name="phone")
+        input(type="text",name="name", value= value ? value.name : '')
+        label Password
+        input(type="text",name="password",value= value ? value.password : '')
         button create

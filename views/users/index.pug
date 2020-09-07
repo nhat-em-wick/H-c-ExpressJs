@@ -6,9 +6,14 @@ block content
     form(action="/users/search",method = "get")
         input(type="text" name ="q")
         button search
-    ul
-        each user in users
-            li
-                span= user.name
-                span &nbsp;
-                a(href="/users/"+user.id) View
+    table.table
+     tr
+       th Name
+       th Password
+       th
+     each user in users
+       tr 
+         td= user.name
+         td= user.password
+         td
+           a(href='/users/'+user.id) View

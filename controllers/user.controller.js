@@ -20,14 +20,26 @@ module.exports.create = function(req, res){
     res.render('users/create');
 }
 
-module.exports.id = function(req, res){
+module.exports.get = function(req, res){
     var id = req.params.id;
     var user = db.get('users').find({id:id}).value();
+    console.log(user);
     res.render('users/view',{user:user});
 }
 
 module.exports.postCreate = function(req, res){
     req.body.id = shortid.generate();
+    var errors = [];
+    if(!req.body.name){
+        errors.push('name is required.')
+    }
+    if(!req.body.password){
+        errors.push('password is required.')
+    }
+    if(errors.length){
+        res.render('users/create',{errors:errors, value: req.body});
+        return;
+    }
     db.get('users').push(req.body).write();
     res.redirect('/users');
 }
